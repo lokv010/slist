@@ -12,7 +12,8 @@
 </div>  
 </div> -->
 <h2>My Recipes</h2>
- <button class="btn btn-primary" (click)=getrecipe()></button>
+<h3>Displays only the recipe details</h3> 
+<button class="btn btn-primary" (click)=getrecipe()></button>
 
 <ul class="recipe">
   <li *ngFor="let re of recipe"
@@ -23,7 +24,6 @@
   </li>
 </ul>
 
-<div *ngIf="selectedre">
 
   <h2>{{selectedre.name | uppercase}} </h2>
  
