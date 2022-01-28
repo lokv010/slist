@@ -1,0 +1,38 @@
+<!-- <button class="btn btn-primary" (click)=getrecipe()></button>
+
+<div class="list-group" *ngFor="let r of recipe; let i=index"  >
+  <button type="button" class="list-group-item list-group-item-action active" 
+  class="btn btn-primary btn-sm"  aria-current="true"
+ 
+ >{{r.name}}</button>
+  
+<div  *ngIf="i==0">{{r.name}}
+  {{r.description}}
+{{r.imagePath}} 
+</div>  
+</div> -->
+<h2>My Recipes</h2>
+ <button class="btn btn-primary" (click)=getrecipe()></button>
+
+<ul class="recipe">
+  <li *ngFor="let re of recipe"
+    [class.selected]="re === selectedre"
+   >
+    <span class="badge"
+    (click)="onSelect(re)">{{re.name}}</span>
+  </li>
+</ul>
+
+<div *ngIf="selectedre">
+
+  <h2>{{selectedre.name | uppercase}} </h2>
+ 
+    
+    <img  [src] ="selectedre.imagePath" class="rounded mx-auto d-block" style="width:30% ;height: 50%; padding-left:10px;">
+    
+  <div>
+  {{selectedre.description}}
+  </div>
+
+</div>
+<app-recipelist></app-recipelist>
